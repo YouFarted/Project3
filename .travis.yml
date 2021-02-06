@@ -1,0 +1,16 @@
+language: node_js
+sudo: enabled
+node_js: "12"
+branches:
+  only:
+    - master
+    - main
+    - AEO
+cache:
+  directories:
+    - node_modules
+services:
+   - mysql
+before_install:
+   - sudo mysql -e 'CREATE DATABASE IF NOT EXISTS testdb;'
+
